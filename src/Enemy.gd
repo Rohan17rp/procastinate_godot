@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var player = get_parent().get_node("Player")
-var speed = 50
+var speed = 40
 
 func _physics_process(delta):
 	look_at(player.global_position)

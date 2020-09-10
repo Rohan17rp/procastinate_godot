@@ -15,6 +15,21 @@ extents = Vector2( 5.44409, 150.184 )
 [node name="World" type="Node2D"]
 script = ExtResource( 5 )
 
+[node name="Control" type="Control" parent="."]
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Exit" parent="." instance=ExtResource( 1 )]
 position = Vector2( 308.677, 130.206 )
 next_level = "res://src/Menu/menu.tscn"
@@ -81,4 +96,9 @@ shape = SubResource( 4 )
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="ObstacleSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="ObstacleSpawnTimer" to="." method="_on_ObstacleSpawnTimer_timeout"]

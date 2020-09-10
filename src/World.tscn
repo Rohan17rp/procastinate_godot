@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/LevelComplete.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/outline.png" type="Texture" id=3]
+[ext_resource path="res://assets/outline_vertical.png" type="Texture" id=4]
+[ext_resource path="res://src/World.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 254.004, 3.9153 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.44409, 150.184 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Exit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 308.677, 130.206 )
+next_level = "res://src/Menu/menu.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 98.1107, 75.4184 )
+
+[node name="HorizontalTop" type="RigidBody2D" parent="."]
+mode = 1
+gravity_scale = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="HorizontalTop"]
+position = Vector2( 256.869, 4.75683 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HorizontalTop"]
+position = Vector2( 256, 5 )
+shape = SubResource( 2 )
+
+[node name="HorizontalBottom" type="RigidBody2D" parent="."]
+position = Vector2( 0, 291.356 )
+mode = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="HorizontalBottom"]
+position = Vector2( 256.869, 4.75683 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HorizontalBottom"]
+position = Vector2( 256, 5 )
+shape = SubResource( 2 )
+
+[node name="VerticalLeft" type="RigidBody2D" parent="."]
+position = Vector2( 4, 154 )
+mode = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="VerticalLeft"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalLeft"]
+shape = SubResource( 4 )
+
+[node name="VerticalRight" type="RigidBody2D" parent="."]
+position = Vector2( 508, 152 )
+mode = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="VerticalRight"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalRight"]
+shape = SubResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

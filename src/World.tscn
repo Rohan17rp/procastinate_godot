@@ -6,10 +6,10 @@
 [ext_resource path="res://assets/outline_vertical.png" type="Texture" id=4]
 [ext_resource path="res://src/World.gd" type="Script" id=5]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 254.004, 3.9153 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5.44409, 150.184 )
 
 [node name="World" type="Node2D"]
@@ -50,7 +50,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HorizontalTop"]
 position = Vector2( 256, 5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="HorizontalBottom" type="RigidBody2D" parent="."]
 position = Vector2( 0, 291.356 )
@@ -65,7 +65,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HorizontalBottom"]
 position = Vector2( 256, 5 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="VerticalLeft" type="RigidBody2D" parent="."]
 position = Vector2( 4, 154 )
@@ -78,7 +78,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalLeft"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="VerticalRight" type="RigidBody2D" parent="."]
 position = Vector2( 508, 152 )
@@ -91,7 +91,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalRight"]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 3.0

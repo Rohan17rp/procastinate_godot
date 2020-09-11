@@ -4,8 +4,8 @@ export(String, FILE, "*.tscn") var next_level
 
 func _ready():
 	GlobalWorld.highScore = GlobalWorld.highScore if GlobalWorld.highScore > GlobalWorld.score else GlobalWorld.score
-	$Popup/Score.text = "SCORE :  " + str(GlobalWorld.score)
-	$Popup/HighScore.text = "High score : " + str(GlobalWorld.highScore)
+	$Popup/Score.text = str(GlobalWorld.score)
+	$Popup/HighScore.text = str(GlobalWorld.highScore)
 	$Popup.show()
 
 

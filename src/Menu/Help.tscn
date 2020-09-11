@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/tutorial/black_background.png" type="Texture" id=1]
+[ext_resource path="res://src/Menu/Help.gd" type="Script" id=2]
+[ext_resource path="res://assets/tutorial/button.png" type="Texture" id=3]
+[ext_resource path="res://assets/tutorial/MainMenu_button.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="."]
+margin_left = 288.0
+margin_top = 192.0
+margin_right = 371.0
+margin_bottom = 212.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_disabled = Color( 0.980392, 0.0431373, 0.0431373, 1 )
+custom_colors/font_color = Color( 0.0627451, 0.976471, 0.227451, 1 )
+custom_colors/font_color_hover = Color( 0.203922, 0.796078, 0.768627, 1 )
+custom_colors/font_color_pressed = Color( 0.141176, 0.0784314, 0.0784314, 1 )
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="StartGame" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 115.0
+margin_bottom = 212.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_disabled = Color( 0.980392, 0.0431373, 0.0431373, 1 )
+custom_colors/font_color = Color( 0.0627451, 0.976471, 0.227451, 1 )
+custom_colors/font_color_hover = Color( 0.203922, 0.796078, 0.768627, 1 )
+custom_colors/font_color_pressed = Color( 0.141176, 0.0784314, 0.0784314, 1 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+[connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="StartGame" to="." method="_on_StartGame_pressed"]

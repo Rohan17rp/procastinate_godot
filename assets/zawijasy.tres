@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/zawijasy/zawijasy.otf"
+
+[resource]
+size = 48
+extra_spacing_top = 15
+extra_spacing_bottom = 15
+extra_spacing_space = 5
+font_data = SubResource( 1 )

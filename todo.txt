@@ -1,0 +1,6 @@
+Spawn enemies at certain distance from player
+Make tutorial screen
+Display number of enemies on screen
+Add backgrounds and player skins
+Add dificulty levels
+

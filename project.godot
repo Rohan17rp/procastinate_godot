@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Procastinate"
-run/main_scene="res://src/World.tscn"
+run/main_scene="res://src/Menu/tutorial.tscn"
 config/icon="res://icon.png"
 
 [autoload]
